@@ -94,22 +94,24 @@ If you have access to this repo on GitHub, you can click the **"Use this templat
 
 ### Option 3 – init.ps1 script
 
-If you created a new repo from this template via GitHub, clone it and run the init script:
+If you created a new repo from this template via GitHub, clone it to your machine and open the folder in File Explorer or your terminal. `init.ps1` lives in the **root of the repo**, right next to the `.sln` file.
 
 ```bash
 git clone https://github.com/your-username/your-new-repo.git
 cd your-new-repo
 ```
 
-Then right-click `init.ps1` and choose **Run with PowerShell**, or run it from the terminal:
+Right-click `init.ps1` and choose **Run with PowerShell**, or run it from the terminal:
 
 ```bash
 .\init.ps1
 ```
 
-The script will ask you for a project name, replace all occurrences of `PG.ProjectName` throughout the entire codebase, and then delete itself. After that your project is ready to push.
+The script will ask you for a project name. **Enter the same name you used for your GitHub repo** (for example, if your repo is called `Resturant.API` then type `Resturant.API`). That way all files, folders, namespaces and the solution file match the repo name exactly.
 
-> **Note:** Make sure your new repo already has a remote set up before running the script if you want it to push automatically.
+The script then replaces every occurrence of `PG.ProjectName` throughout the entire codebase, renames files and folders, writes a fresh minimal README, commits everything, pushes to your remote and finally deletes itself.
+
+> **Note:** Your new repo needs a remote set up (which it already has if you created it via GitHub's "Use this template" button) for the automatic push to work. If the push fails for any reason, you can still commit and push manually afterwards.
 
 ---
 
